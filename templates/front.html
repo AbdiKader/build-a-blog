@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+  {% for p in posts %}
+   <a class="nolink" href="/blog/{{p.key().id()}}"><h2>{{p.subject}}</h2></a>
+   <br>
+   {{p.content}}
+   <br>
+    
+  {% endfor %}
+<form action="/blog/newpost">
+    <input type="submit" value="Add New Post" />
+</form>
+
+{% endblock %}
